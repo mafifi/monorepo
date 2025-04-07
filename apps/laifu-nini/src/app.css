@@ -1,3 +1,87 @@
 @import 'tailwindcss';
+@source '../../../packages/ui/src/lib/blocks/**';
+@source '../../../packages/ui/src/lib/components/ui/button';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-animate';
+
+@theme {
+
+	--color-primary-50: oklch(97.49% 0.02 228.96);
+	--color-primary-100: oklch(94.08% 0.03 233.04);
+	--color-primary-200: oklch(89.90% 0.06 230.41);
+	--color-primary-300: oklch(84.24% 0.10 229.17);
+	--color-primary-400: oklch(76.74% 0.14 235.83);
+	--color-primary-500: oklch(68.48% 0.17 247.89);
+	--color-primary-600: oklch(61.35% 0.21 256.55);
+	--color-primary-700: oklch(56.85% 0.23 260.05);
+	--color-primary-800: oklch(47.50% 0.19 260.47);
+	--color-primary-900: oklch(42.11% 0.15 258.39);
+	--color-primary-950: oklch(30.49% 0.09 259.16);	
+
+	--color-souphi-50: #f3f8fc;
+	--color-souphi-100: #e5f1f9;
+	--color-souphi-200: #c5e3f2;
+	--color-souphi-300: #93cde6;
+	--color-souphi-400: #42a9d1;
+	--color-souphi-500: #339ac4;
+	--color-souphi-600: #247ca5;
+	--color-souphi-700: #1e6386;
+	--color-souphi-800: #1d556f;
+	--color-souphi-900: #1d475d;
+	--color-souphi-950: #132e3e;
+
+	--color-background: light-dark(var(--color-zinc-100), var(--color-zinc-900));
+	--color-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+	--color-card: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+	--color-card-foreground: light-dark(var(--color-zinc-950), var(--color-zinc-50));
+	--color-popover: light-dark(var(--color-primary-50), var(--color-primary-950));
+	--color-popover-foreground: light-dark(var(--color-primary-900), var(--color-primary-100));
+	--color-primary: light-dark(var(--color-primary-200), var(--color-primary-800));
+	--color-primary-foreground: light-dark(var(--color-primary-900), var(--color-primary-100));
+	--color-secondary: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+	--color-secondary-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-50));
+	--color-muted: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+	--color-muted-foreground: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+	--color-accent: light-dark(var(--color-primary-600), var(--color-primary-400));
+	--color-accent-foreground: light-dark(var(--color-primary-50), var(--color-primary-950));
+	--color-destructive: light-dark(var(--color-red-500), var(--color-red-500));
+	--color-destructive-foreground: light-dark(var(--color-red-900), var(--color-red-100));
+	--color-border: light-dark(var(--color-zinc-300), var(--color-zinc-700));
+	--color-input: light-dark(var(--color-zinc-100) var(--color-zinc-900));
+	--color-ring: light-dark(var(--color-primary-200), var(--color-primary-800));
+	--radius-radius: 0.5rem;
+
+	--color-sidebar-background: light-dark(var(--color-zinc-50), var(--color-zinc-900));
+	--color-sidebar-foreground: light-dark(var(--color-zinc-700), var(--color-zinc-100));
+	--color-sidebar-primary: light-dark(var(--color-zinc-900), var(--color-primary-900));
+	--color-sidebar-primary-foreground: light-dark(var(--color-zinc-50), hsl(0 0% 100%));
+	--color-sidebar-accent: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+	--color-sidebar-accent-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+	--color-sidebar-border: light-dark(var(-color-zinc-100), var(-color-zinc-900));
+	--color-sidebar-ring: light-dark(var(--color-primary-700) var(--color-primary-700));
+
+	--font-sans: "Noto Sans", sans-serif;
+	--font-serif: "Noto Serif", serif;
+	--font-mono: "Noto Sans Mono", monospace;
+
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+	@keyframes accordion-down: {
+		from: { height: 0; },
+		to: { height: var(--bits-accordion-content-height); }
+	}
+
+	@keyframes accordion-up: {
+		from: { height: var(--bits-accordion-content-height); },
+		to: { height: 0; }
+	}
+
+	@keyframes caret-blink: {
+		"0%,70%,100%": { opacity: 1; },
+		"20%,50%": { opacity: 0; }
+	}
+}
+

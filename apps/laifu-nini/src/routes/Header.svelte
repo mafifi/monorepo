@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Header } from '@monorepo/ui';
+    import { Header } from '@monorepo/ui/blocks/marketing/header';
     import { page } from '$app/state';
     
     // Define reactive variables using Svelte 5 Runes syntax

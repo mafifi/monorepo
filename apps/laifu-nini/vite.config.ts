@@ -18,6 +18,21 @@ export default defineConfig({
 			'@monorepo/ui': resolve(__dirname, '../../packages/ui/dist')
 		}
 	},
+	build: {
+		cssMinify: false,
+		rollupOptions: {
+			output: {
+				manualChunks: undefined
+			}
+		}
+	},
+	server: {
+		fs: {
+			allow: [
+				'../../packages'
+			]
+		}
+	},
 	test: {
 		workspace: [
 			{
