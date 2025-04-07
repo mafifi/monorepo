@@ -1,6 +1,8 @@
 {
-	"name": "ui",
+	"name": "@monorepo/ui",
 	"version": "0.0.1",
+	"module": "./dist/index.js",
+	"main": "./dist/index.js",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -32,6 +34,18 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./blocks/ui/*": {
+			"types": "./dist/blocks/marketing/*/index.d.ts",
+			"default": "./dist/blocks/marketing/*/index.js"
+		},
+		"./components/ui/*": {
+			"types": "./dist/components/ui/*/index.d.ts",
+			"default": "./dist/components/ui/*/index.js"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"default": "./dist/utils.js"
 		}
 	},
 	"peerDependencies": {

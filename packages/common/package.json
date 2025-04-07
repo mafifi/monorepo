@@ -1,5 +1,5 @@
 {
-	"name": "common",
+	"name": "@monorepo/common",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
