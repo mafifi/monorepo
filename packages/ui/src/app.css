@@ -1,75 +1,84 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@source '../../../**/*.{svelte,ts,html}';
+@import './fonts/fonts.css';
+@plugin 'tailwindcss-animate';
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 240 10% 3.9%;
-    --radius: 0.5rem;
-	--sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+@theme {
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 240 4.9% 83.9%;
-	--sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
+	--color-primary-50: oklch(97.49% 0.02 228.96);
+	--color-primary-100: oklch(94.08% 0.03 233.04);
+	--color-primary-200: oklch(89.90% 0.06 230.41);
+	--color-primary-300: oklch(84.24% 0.10 229.17);
+	--color-primary-400: oklch(76.74% 0.14 235.83);
+	--color-primary-500: oklch(68.48% 0.17 247.89);
+	--color-primary-600: oklch(61.35% 0.21 256.55);
+	--color-primary-700: oklch(56.85% 0.23 260.05);
+	--color-primary-800: oklch(47.50% 0.19 260.47);
+	--color-primary-900: oklch(42.11% 0.15 258.39);
+	--color-primary-950: oklch(30.49% 0.09 259.16);	
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+	--color-souphi-50: #f3f8fc;
+	--color-souphi-100: #e5f1f9;
+	--color-souphi-200: #c5e3f2;
+	--color-souphi-300: #93cde6;
+	--color-souphi-400: #42a9d1;
+	--color-souphi-500: #339ac4;
+	--color-souphi-600: #247ca5;
+	--color-souphi-700: #1e6386;
+	--color-souphi-800: #1d556f;
+	--color-souphi-900: #1d475d;
+	--color-souphi-950: #132e3e;
+
+	--color-background: light-dark(var(--color-zinc-100), var(--color-zinc-900));
+	--color-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+	--color-card: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+	--color-card-foreground: light-dark(var(--color-zinc-950), var(--color-zinc-50));
+	--color-popover: light-dark(var(--color-primary-50), var(--color-primary-950));
+	--color-popover-foreground: light-dark(var(--color-primary-900), var(--color-primary-100));
+	--color-primary: light-dark(var(--color-primary-200), var(--color-primary-800));
+	--color-primary-foreground: light-dark(var(--color-primary-900), var(--color-primary-100));
+	--color-secondary: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+	--color-secondary-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-50));
+	--color-muted: light-dark(var(--color-zinc-50), var(--color-zinc-950));
+	--color-muted-foreground: light-dark(var(--color-zinc-700), var(--color-zinc-300));
+	--color-accent: light-dark(var(--color-primary-600), var(--color-primary-400));
+	--color-accent-foreground: light-dark(var(--color-primary-50), var(--color-primary-950));
+	--color-destructive: light-dark(var(--color-red-500), var(--color-red-500));
+	--color-destructive-foreground: light-dark(var(--color-red-900), var(--color-red-100));
+	--color-border: light-dark(var(--color-zinc-300), var(--color-zinc-700));
+	--color-input: light-dark(var(--color-zinc-100) var(--color-zinc-900));
+	--color-ring: light-dark(var(--color-primary-200), var(--color-primary-800));
+	--radius-radius: 0.5rem;
+
+	--color-sidebar-background: light-dark(var(--color-zinc-50), var(--color-zinc-900));
+	--color-sidebar-foreground: light-dark(var(--color-zinc-700), var(--color-zinc-100));
+	--color-sidebar-primary: light-dark(var(--color-zinc-900), var(--color-primary-900));
+	--color-sidebar-primary-foreground: light-dark(var(--color-zinc-50), hsl(0 0% 100%));
+	--color-sidebar-accent: light-dark(var(--color-zinc-100), var(--color-zinc-800));
+	--color-sidebar-accent-foreground: light-dark(var(--color-zinc-900), var(--color-zinc-100));
+	--color-sidebar-border: light-dark(var(-color-zinc-100), var(-color-zinc-900));
+	--color-sidebar-ring: light-dark(var(--color-primary-700) var(--color-primary-700));
+
+	--font-sans: "Noto Sans", sans-serif;
+	--font-serif: "Noto Serif", serif;
+	--font-mono: "Noto Sans Mono", monospace;
+
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+	@keyframes accordion-down: {
+		from: { height: 0; },
+		to: { height: var(--bits-accordion-content-height); }
+	}
+
+	@keyframes accordion-up: {
+		from: { height: var(--bits-accordion-content-height); },
+		to: { height: 0; }
+	}
+
+	@keyframes caret-blink: {
+		"0%,70%,100%": { opacity: 1; },
+		"20%,50%": { opacity: 0; }
+	}
 }
